@@ -1,5 +1,7 @@
 # makeup
 
+TODO: describe this shellkit
+
 ## Setup
 
 Download and install the self-extracting setup script:
