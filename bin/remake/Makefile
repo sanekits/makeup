@@ -1,12 +1,22 @@
 # Makefile for makeup/remake
 
+SHELL=/bin/bash
+
+# See https://stackoverflow.com/a/73509979/237059
+RemakeHome := $(dir $(realpath $(lastword $(MAKEFILE_LIST))))
+
 RemakeVer=4.3
 
 .PHONY: nope
 nope:
 	@# TODO: explain nope
 
-download:
+.PHONY: checkdir
+checkdir:
+	@[[ $(PWD) == $(RemakeHome) ]] || exit "1 Must run in $(RemakeHome) as current dir"
+
+
+download: checkdir
 	mkdir download
 
 download/remake-4.3.deb: download

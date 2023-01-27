@@ -13,6 +13,11 @@ kit_depends := \
 
 .PHONY: publish publish-draft
 
+.PHONY: remake-clean
+remake-clean:
+	cd bin/remake && rm -rf ./download || :
+
+build: remake-clean
 
 publish: pre-publish publish-common release-upload release-list
 	cat tmp/draft-url
