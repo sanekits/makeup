@@ -1,4 +1,5 @@
 {
+    "window.title": "shellkit - makeup",
     "workbench.colorCustomizations": {
         "tab.activeForeground": "#9272c2",
         "tab.unfocusedActiveForeground": "#808080",
@@ -24,7 +25,6 @@
         "terminalCursor.foreground": "#A5A2A2",
         "window.activeBorder": "#00ff00",
         "window.inactiveBorder": "#52309b",
-        "activityBar.background": "#53163A",
         "titleBar.activeBackground": "#741E51",
         "titleBar.activeForeground": "#FEFCFD"
     }

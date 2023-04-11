@@ -4,8 +4,12 @@ makeup-semaphore() {
     [[ 1 -eq  1 ]]
 }
 
-do-makeup() {
-    # TODO: This is a test function.  You can discard it.
-    makeup.sh
+type -p _completion_loader && {
+    # If you see "bash: _make: command not found" when trying to
+    # autocomplete aliases mapped to make/gmake, it means that
+    # the completion for make itself isn't yet loaded.  We can force that:
+    _completion_loader make
+    _completion_loader gmake
 }
+
 
