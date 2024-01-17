@@ -12,4 +12,8 @@ type -p _completion_loader && {
     _completion_loader gmake
 }
 
+alias mkd=make-debug.sh
+complete -F _make make-debug.sh
+complete -F _complete_alias mkd
+
 
