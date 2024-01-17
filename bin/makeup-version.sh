@@ -2,7 +2,7 @@
 
 # Running makeup-version.sh is the correct way to
 # get the home install path for the tool
-KitVersion=0.1.5
+KitVersion=0.1.7
 
 canonpath() {
     builtin type -t realpath.sh &>/dev/null && {
