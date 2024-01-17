@@ -11,18 +11,10 @@ kit_depends := \
     bin/makeup.bashrc \
     bin/makeup.sh
 
-.PHONY: publish publish-draft
+.PHONY: publish
 
-.PHONY: remake-clean
-remake-clean:
-	cd bin/remake && rm -rf ./download || :
-
-build: remake-clean
 
 publish: pre-publish publish-common release-upload release-list
 	cat tmp/draft-url
 	@echo ">>>> publish complete OK. (FINAL)  <<<"
 
-publish-draft: pre-publish publish-common release-draft-upload release-list
-	cat tmp/draft-url
-	@echo ">>>> publish complete OK. (DRAFT - you must manually publish it from github release page)  <<<"
