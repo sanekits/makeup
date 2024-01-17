@@ -11,5 +11,5 @@ die() {
 }
 
 Logfile=/tmp/make.log
-make -rd ".SHELLFLAGS= -uxec" "$@" | tee ${Logfile}
+make -rd ".SHELLFLAGS= -uxec" "$@" |& tee ${Logfile}
 echo "Output make captured in $Logfile" >&2
