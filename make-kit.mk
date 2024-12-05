@@ -1,4 +1,5 @@
 # make-kit.mk for makeup
+make-kit.mk: ;
 #  This makefile is included by the root shellkit Makefile
 #  It defines values that are kit-specific.
 #  You should edit it and keep it source-controlled.
