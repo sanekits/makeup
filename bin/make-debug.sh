@@ -15,6 +15,15 @@ do_help() {
 
     |Additional options for make-debug.sh:
     |  --light: Use -xc instead of -uxec for .SHELLFLAGS
+    |  --ps4: Print PS4x pasteable for GNU make
+    
+EOF
+}
+
+do_ps4x() {
+    cat <<-"EOF"
+#	PS4=$(PS4x)  # <-- Copy/uncomment this in recipe to enable smart PS4 
+PS4x='$$( _0=$$?;_1="$(notdir $@)";_2="$(realpath $(lastword $(MAKEFILE_LIST)))"; exec 2>/dev/null; echo "$${_2}|$${_1}@+$${LINENO} ^$$_0 $${FUNCNAME[0]:-?}()=>" ) '
 EOF
 }
 
@@ -31,6 +40,8 @@ while [[ $# -gt 0 ]]; do
         --light)
             Shellflags="-xc"
             ;;
+        --ps4*)
+            do_ps4x; exit;;
         *)
             FwdArgs+=("$1")
             ;;
