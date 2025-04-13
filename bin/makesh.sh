@@ -36,24 +36,26 @@ EOF
 }
 
 main() {
+    setPs4
     [[ "$*" == *BASH_MAKE_COMPLETION* ]] && {
         # our wrapper will interfere with completions unless we defer
         # entirely to make on that use case:
         command make "$@"
         exit
     }
-    set -ue
-    [[ $# -eq 0 ]] && { do_help; exit ; }
+    set -e
     while [[ -n $1 ]]; do
         case "$1" in
             -h|--help) shift; do_help "$@" ; return;;
             --) shift; break;;  # Remaining args get forwarded to make
+            *) break ;; # Anything we don't understand is also a sign that we're done with our own args
         esac
         shift
     done
+    set -u
 
     echo '#!/bin/bash'
-    $(which make) -qn "$@" | shfmt -i 4 
+    command make  --silent --dry-run --no-print-directory "$@" | command shfmt -i 4 
 }
 
 if [[ -z "${sourceMe}" ]]; then
