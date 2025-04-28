@@ -6,7 +6,7 @@ TODO: describe this shellkit
 
 Download and install the self-extracting setup script:
 ```
-curl -L https://github.com/sanekits/makeup/releases/download/0.2.6/makeup-setup-0.2.6.sh \
+curl -L https://github.com/sanekits/makeup/releases/download/0.2.7/makeup-setup-0.2.7.sh \
     -o ~/tmp$$.sh && bash ~/tmp$$.sh && rm ~/tmp$$.sh
 ```
 
